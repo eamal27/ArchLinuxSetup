@@ -5,7 +5,7 @@ Guide to setting up Arch Linux in VMWare
 ```
 # lsblk
 
-# cfdisk
+# cfdisk /dev/sda
 ```
 
 Create disk type gpt and swap
@@ -66,7 +66,7 @@ sda3  8:3  0  1.5G  0 part  [SWAP]
 ### Set Timezone
 
 ```
-# ln -s /usr/share/zoneinfo/Canada/Eastern /etc/localtime
+# ln -s /usr/share/zoneinfo/America/Toronto /etc/localtime
 ```
 
 ### Generate languages
@@ -88,7 +88,7 @@ uncomment languages in locale.gen to be generated i.e. en_US.UTF-8 UTF-8
 ### Install Grub
 
 ```
-# grub-install /dev/sda
+# grub-install --efi-directory=/boot
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
